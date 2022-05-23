@@ -83,3 +83,14 @@ In the Optimizer, I use AdamW, namely Adaptive Momentum with Weight Decay, where
 
 # Training Loop
 ![Screenshot 2022-05-23 211503](https://user-images.githubusercontent.com/86812576/169839561-854192f3-6add-4001-8345-e3a9ed6bd7b2.png)
+
+Prepare two lists, train_cost, and test_cost the goal is to see the loss goes down or not at once analyzed. Furthermore, in train_cost, it can be seen that the code above already has Feedforward, Calculate Loss, Backpropagation, update weight, and the total loss will be averaged to cost.
+
+![Screenshot 2022-05-23 213848](https://user-images.githubusercontent.com/86812576/169844276-84d5497a-1268-4060-acc7-4b2c4513b56d.png)
+
+What about test_cost?
+The test data should never be fit (training) because it is a data leak meaning that in the test data we will never touch gradient, backprop, update weight and optimizer. but only use Feedforward because it is prediction. So the code is just feedforward and calculate the cost in order to get a history of loss reduction and overfit analysis. Basically the code is the same but a lot of things are thrown away.
+
+the first in PyTorch there are tools that guarantee no gradient calculations, namely torch.no_grad(). If we set this it will save a lot of memory, because behind the scenes there is a lot of memory used for gradient calculations, while we will not calculate gradients also avoid data leaked. Status changed to model.eval() for evaluation, initialize cost with 0
+
+yB doing this we can predict the error in the test data
