@@ -52,9 +52,14 @@ split the data into X, and y
 
 X = all columns except the target column.
 
-y = 'Outcome' as target
+y = 'Outcome'.values as target, because PyTorch can't interact with pandas then change it to numpy
 
 test_size = 0.2 (which means 80% for train, and 20% for test)
 
 # Data Preprocessing
-Just a reminder that in PyTorch there is no data preprocessor, so I still use Scikit-Learn
+Just a reminder that in PyTorch there is no data preprocessor, so I still use Scikit-Learn.
+
+Just like a machine learning project on a preprocessor, I will separate numeric data and categorical data for the purpose of impute data not for training. for that directly fit_transfrom on the processor and put it in the new X_train variable. when this step is done it will generate a numpy array so it must be converted to torch.tensor.
+
+# Dataset & DataLoader
+convert train data and test data to torch.tensor. But you have to be careful because the target column is a classification (0 and ) then you must use an integer torch.LongTensor, unless you use a sigmoid or binary classification ( 0 to 1) then you can use a FloatTensor. And in this case I will use logsoftmax so I will use integer. Next, so as not to forget to add to.device so that it can use the GPU if there is one.
