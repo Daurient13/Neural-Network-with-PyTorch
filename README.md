@@ -70,10 +70,13 @@ First of all prepare a dataloader with minibatch per 64 data.
 
 # Training Preparation -> MCO
 - Model
+
 I will make 3 hidden layers. The first hidden layer will consist of 16 neurons, the second hidden layer will consist of 8 neurons, and the third hidden layer will consist of 4 neurons. ReLu activation will be included in each hidden layer, and ended with a multiclass classification with logsoftmax.
 
 - Criterion
+
 In Criterion, NLLLoss will be used for multiclass classification, which models ending with logsoftmax.
 
 - Optimizer
-in the Optimizer, I use AdamW, namely Adaptive Momentum with Weight Decay, where there is a regulation to reduce overfit. With learning rate 0.001
+
+In the Optimizer, I use AdamW, namely Adaptive Momentum with Weight Decay, where there is a regulation to reduce overfit. With learning rate 0.001
