@@ -80,3 +80,6 @@ In Criterion, NLLLoss will be used for multiclass classification, which models e
 - Optimizer
 
 In the Optimizer, I use AdamW, namely Adaptive Momentum with Weight Decay, where there is a regulation to reduce overfit. With learning rate 0.001
+
+# Training Loop
+![Screenshot 2022-05-23 211503](https://user-images.githubusercontent.com/86812576/169839561-854192f3-6add-4001-8345-e3a9ed6bd7b2.png)
