@@ -93,4 +93,4 @@ The test data should never be fit (training) because it is a data leak meaning t
 
 the first in PyTorch there are tools that guarantee no gradient calculations, namely torch.no_grad(). If we set this it will save a lot of memory, because behind the scenes there is a lot of memory used for gradient calculations, while we will not calculate gradients also avoid data leaked. Status changed to model.eval() for evaluation, initialize cost with 0
 
-yB doing this we can predict the error in the test data
+By doing this we can predict the error in the test data
