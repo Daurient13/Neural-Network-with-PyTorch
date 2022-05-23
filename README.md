@@ -63,3 +63,17 @@ Just like a machine learning project on a preprocessor, I will separate numeric 
 
 # Dataset & DataLoader
 convert train data and test data to torch.tensor. But you have to be careful because the target column is a classification (0 and ) then you must use an integer torch.LongTensor, unless you use a sigmoid or binary classification ( 0 to 1) then you can use a FloatTensor. And in this case I will use logsoftmax so I will use integer. Next, so as not to forget to add to.device so that it can use the GPU if there is one.
+
+![datasetloader](https://user-images.githubusercontent.com/86812576/169831023-1b6cbe36-26e0-4517-9142-fbab0ef5b2da.png)
+
+First of all prepare a dataloader with minibatch per 64 data.
+
+# Training Preparation -> MCO
+- Model
+I will make 3 hidden layers. The first hidden layer will consist of 16 neurons, the second hidden layer will consist of 8 neurons, and the third hidden layer will consist of 4 neurons. ReLu activation will be included in each hidden layer, and ended with a multiclass classification with logsoftmax.
+
+- Criterion
+In Criterion, NLLLoss will be used for multiclass classification, which models ending with logsoftmax.
+
+- Optimizer
+in the Optimizer, I use AdamW, namely Adaptive Momentum with Weight Decay, where there is a regulation to reduce overfit. With learning rate 0.001
