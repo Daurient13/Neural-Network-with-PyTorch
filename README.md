@@ -136,8 +136,14 @@ Another intuition about understanding dropouts is that if we dropout (remove fea
 
 After linear, and activated, add a layer called Droput Layer by 20%. Don't dropout the output layer, because it will throw the prediction, the dropout is only on the hidden layer.
 
-# Training
+# Training and Result
 Training will be made more simple. The previous training code has a lot of repetition, therefore the following code is simplified like a Machine Learning Engineer.
 
-![Screenshot 2022-05-24 113400](https://user-images.githubusercontent.com/86812576/169950620-dcd5bbf3-34f1-4c69-b8a5-931b1c03b571.png)
+![Screenshot 2022-05-24 114336](https://user-images.githubusercontent.com/86812576/169950765-8188a8aa-aa9e-4034-8d26-f687a0c652e4.png)
 
+![Screenshot 2022-05-24 115200](https://user-images.githubusercontent.com/86812576/169951818-c2d54ec7-4498-4490-adf5-dfa5079bfecf.png)
+
+![Screenshot 2022-05-24 115315](https://user-images.githubusercontent.com/86812576/169951842-93f6a8ab-bedc-4c39-b85d-211c6bd9e9b3.png)
+
+Has the model improved?
+it turns out that after adding the dropout the results are even better. in this case I added a dropout of 0.25%. or if overfit can use division of 2 on neurons, for example using 8,4,4 architecture.
