@@ -149,3 +149,12 @@ Has the model improved?
 it turns out that after adding the dropout the results are even better. in this case I added a dropout of 0.25%. or if overfit can use division of 2 on neurons, for example using 8,4,4 architecture.
 
 Even sometimes the test can be better than the train, this shows that the model can generalize. At the point of the 450s the epoch test score was almost 75%.
+
+# Save ~~Model~~ Weights
+The interesting thing about deep learning frameworks is that it's usually not the model that is saved but the weight.
+So what is stored is the weight in the form of a matrix. because at the time of training what is being trained is the weight, not the architecture.
+
+Create a folder with package named OS to access the directory on the computer. The folder will later store the weights of the model we created.
+
+# Load
+Because what we save is the weight, then what is loaded is the weight as well.
