@@ -94,3 +94,18 @@ The test data should never be fit (training) because it is a data leak meaning t
 the first in PyTorch there are tools that guarantee no gradient calculations, namely torch.no_grad(). If we set this it will save a lot of memory, because behind the scenes there is a lot of memory used for gradient calculations, while we will not calculate gradients also avoid data leaked. Status changed to model.eval() for evaluation, initialize cost with 0
 
 By doing this we can predict the error in the test data
+
+# Cost History
+
+![image](https://user-images.githubusercontent.com/86812576/169942774-9868d6ce-48b9-4780-ac71-f6180a0985d7.png)
+
+From the plot history above, it can be seen that 400 epochs are actually sufficient. If we plot the cost history then there is something that can be analyzed, here we can see that the training is getting smarter, but the test at some point actually goes up. This means that actually we only need up to 400 epochs because we always take the lowest test (cost). 
+
+Can we go back to 400 epochs? of course not. then how do we find the best epoch? because currently the resulting model is at the very end of the line, and this model is classified as overfit.
+
+# Predict
+If we want to make predictions then just copy it in the testing code. The difference is that there is no need to use a dataloader, because it will always use the append function.
+
+![Screenshot 2022-05-24 104322](https://user-images.githubusercontent.com/86812576/169944744-bebd314b-aa4f-4adc-a549-39503c1afd69.png)
+
+I just use the argmax function to get the index, so it generates predictions on the data test for a total of 154 predictions
