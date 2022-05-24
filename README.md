@@ -147,3 +147,5 @@ Training will be made more simple. The previous training code has a lot of repet
 
 Has the model improved?
 it turns out that after adding the dropout the results are even better. in this case I added a dropout of 0.25%. or if overfit can use division of 2 on neurons, for example using 8,4,4 architecture.
+
+Even sometimes the test can be better than the train, this shows that the model can generalize. At the point of the 450s the epoch test score was almost 75%.
