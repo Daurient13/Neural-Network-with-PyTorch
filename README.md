@@ -108,4 +108,22 @@ If we want to make predictions then just copy it in the testing code. The differ
 
 ![Screenshot 2022-05-24 104322](https://user-images.githubusercontent.com/86812576/169944744-bebd314b-aa4f-4adc-a549-39503c1afd69.png)
 
-I just use the argmax function to get the index, so it generates predictions on the data test for a total of 154 predictions
+the output above is not a prediction but logsoftmax, i.e. probability.
+If you want predictive results, then take the highest probability. I just use the argmax function to get the index, so it generates predictions on the data test for a total of 154 predictions
+
+# Accuracy
+if you want to calculate accuracy, then compare the test data with the previous prediction which is exactly the same and then calculate the average. True means true, False means false. The accuracy result is 68%, which is not too bad.
+
+# Reducing Overfit with Dropout
+Is there anything else that can reduce the overfit besides regularization? Dropout is the easiest way to reduce overfit in neural networks invented by Geoffrey Hinton.
+Here is the illustration.
+
+![image](https://user-images.githubusercontent.com/86812576/169946724-24ff88c4-c0c8-4a87-a412-1d21a5c67a73.png)
+the picture above is a photo of Mr Bean
+We can see the picture on the right with lots of holes, maybe even half the picture is hollow, but we can still recognize that the picture is a photo of Mr Bean. If a neural network can recognize something even though there are parts that are omitted, it means that it can generalize. The neural network can recognize the image because it sees other features.
+
+![image](https://user-images.githubusercontent.com/86812576/169947374-fd8f8f1c-48ea-4fa2-91d2-3821f7f597c9.png)
+
+the idea is that in each iteration of each neuron there will be a probability that it will be eliminated. if we enter a dropout of 20%, that means there will be a percentage of 20% of neurons that will be dropped out. Tn the example above, after the first iteration, the dark colored neurons are affected by dropout. So in training, it's as if the infrastructure is 3-3-1, the temporary weight is multiplied by zero as well as the backprop.
+
+So, it's like training a smaller neural network, but it's different in each iteration because each neuron has a 20% chance of dropping out. By using dropout, the machine will not only train one good feature, but when that feature is hit by a dropout, it will take advantage of other features to predict the same thing.
