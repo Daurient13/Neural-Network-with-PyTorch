@@ -127,3 +127,17 @@ We can see the picture on the right with lots of holes, maybe even half the pict
 the idea is that in each iteration of each neuron there will be a probability that it will be eliminated. if we enter a dropout of 20%, that means there will be a percentage of 20% of neurons that will be dropped out. Tn the example above, after the first iteration, the dark colored neurons are affected by dropout. So in training, it's as if the infrastructure is 3-3-1, the temporary weight is multiplied by zero as well as the backprop.
 
 So, it's like training a smaller neural network, but it's different in each iteration because each neuron has a 20% chance of dropping out. By using dropout, the machine will not only train one good feature, but when that feature is hit by a dropout, it will take advantage of other features to predict the same thing.
+
+Another intuition about understanding dropouts is that if we dropout (remove features) it will add bias, if we increase bias then the variance decreases (Bias Variance Tradeoff).
+
+# Next Model with Dropout
+
+![Screenshot 2022-05-24 113400](https://user-images.githubusercontent.com/86812576/169949707-3ae06269-35e3-4eb0-bf5e-a42179d12205.png)
+
+After linear, and activated, add a layer called Droput Layer by 20%. Don't dropout the output layer, because it will throw the prediction, the dropout is only on the hidden layer.
+
+# Training
+Training will be made more simple. The previous training code has a lot of repetition, therefore the following code is simplified like a Machine Learning Engineer.
+
+![Screenshot 2022-05-24 113400](https://user-images.githubusercontent.com/86812576/169950620-dcd5bbf3-34f1-4c69-b8a5-931b1c03b571.png)
+
