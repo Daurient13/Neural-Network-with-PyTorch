@@ -1,4 +1,24 @@
 # Neural-Network-with-PyTorch
+# What is Neural Network?
+
+<img width="1029" alt="dl" src="https://user-images.githubusercontent.com/86812576/170289286-9388240e-93b0-469e-9c9c-f1a6f31edbbe.png">
+
+For example, if the case is simple, we can still make the rules, which can be limited to using conventional AI technology which is a rule base, if this happens what should be done, if A then B, if B then C. it's too difficult to use simple rules, if it's too complex then we will choose what if the machine does that. But this time we have realized that so far we have worked on many machine learning projects and have to do feature engineering, is it possible if feature engineering is handed over to machines? That is what is called Deep Learning, which is working from input data to predictions that we previously had to preprocess the data. Deep learning will do feature engineering and training on the data. Deep Learning itself has fewer industrial applications, because deep learning is more specific in its use, namely on unstructured data because basically it is unstructured data that is difficult to do feature engineering, so we leave it to the machine, and in the end the performance is very good compared to machine learning for unstructured data. So usually deep learning is used for unstructured data, so if your business does not require deep learning, then it is better to use machine learning.
+
+### a. Linear Combination
+<img width="517" alt="kl" src="https://user-images.githubusercontent.com/86812576/170290540-20e16fdf-5e0d-4d61-90c9-f7425a68a1cd.png">
+
+The above equation is called a linear combination, from only scalar multiplication with addition, so combining the features combined into 1, that is by giving weights.
+
+### b. Node Representation and Activation Function
+<img width="609" alt="nnr" src="https://user-images.githubusercontent.com/86812576/170291929-5dea25f5-cda2-4ca8-86ba-f9c2769dd09d.png">
+
+Because neural networks have a relationship with deep learning, the principle is if there is data -> feature engineering -> training. Feature engineering in deep learning comes from a combination of the previous features. The features will be combined and then activated. For example in the picture above, x1, x2, x3 will be combined to produce z1 (red), and z2 (blue), meaning that on the way to z1, z2 which is then trained by regression to perform feature engineering (feature extraction), that is, from a feature is changed be another feature. So the idea is as simple as Regression from Regression, the goal is to make feature engineering / feature extraction, after that do regular regression with activation. For example
+
+<img width="1137" alt="nodrep" src="https://user-images.githubusercontent.com/86812576/170293123-69e43e3f-556e-406c-8cb4-b6259df19fc2.png">
+
+Linear regression is a combination of linear plus Identification activation function, 
+Logistic regression is a linear combination plus the Sigmoid activation function.
 
 # Dataset
 in this project I use tabular data like the previous machine learning project. This data is talking about Diabetes, data consists of 768 rows and 9 columns.
