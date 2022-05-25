@@ -20,6 +20,9 @@ Because neural networks have a relationship with deep learning, the principle is
 Linear regression is a combination of linear plus Identification activation function, 
 Logistic regression is a linear combination plus the Sigmoid activation function.
 
+So where do a, b, c come from? the machine will find itself how much weight a, and b and the technology is Optimizer. The most commonly used optimizer is gradient descent.
+Gradient descent will look for the lowest error from a, b, and c so that it is combined with the activation we want.
+
 # Dataset
 in this project I use tabular data like the previous machine learning project. This data is talking about Diabetes, data consists of 768 rows and 9 columns.
 Here are the column variables.
